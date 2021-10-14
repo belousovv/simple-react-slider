@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Slider from './components/Slider/Slider';
+import "./App.scss";
 
-function App() {
+const App: React.FC = () => {
+
+  const slides = [
+    {
+        img: 'https://www.w3schools.com/howto/img_nature_wide.jpg',
+        text: 'Caption Text 1'
+    },
+    {
+        img: 'https://www.w3schools.com/howto/img_snow_wide.jpg',
+        text: 'Caption Text 2'
+    },
+    {
+        img: 'https://www.w3schools.com/howto/img_mountains_wide.jpg',
+        text: 'Caption Text 3'
+    },
+];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Slider slides={slides} loop={true} auto={false} />
     </div>
   );
 }
